@@ -17,25 +17,23 @@ output: true
 */
 
 var isMonotonic = function(input) {
-    var isIncreasing = function(array) {
-        for (i = 1; i < array.length; ++ i) {
-            if (array[i] <= array[i - 1]) {
+    var incr = false;
+    if (input[1] > input[0]){
+        incr = true;
+    }
+    for (var i= 1; i < input.length; i++) {
+        if (input[i] < input[i-1]) {
+            if (incr){
+                return false;
+            }
+        } else if (input[i] > input[i-1]){
+            if (!incr){
                 return false;
             }
         }
-        return true;
     }
-    var isDecreasing = function(array) {
-        for (i = 1; i < array.length; ++ i) {
-            if (array[i] >= array[i - 1]) {
-                return false;
-            }
-        }
-        return true;
-    }
+    return true;
+};
 
-    return isDecreasing(input) || isIncreasing(input);
-};
-};
 
 console.log('hi');

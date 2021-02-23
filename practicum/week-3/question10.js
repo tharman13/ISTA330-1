@@ -16,5 +16,4 @@ output: [[-5, -4], [23, 24]]
 */
 
 var minPairs = function(input) {
-
 };
